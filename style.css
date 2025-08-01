@@ -1,0 +1,201 @@
+body {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', ;
+    background: linear-gradient(to right , #969696 , #09090a);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top instead of center for longer content */
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #070707;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1100px; /* Slightly wider to accommodate more cards */
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+/* --- General Styling --- */
+h1 {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+}
+
+h2 {
+    color: #090909;
+    text-align: center;
+    margin-top: 0;
+    font-size: 1.5em;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.note {
+    font-size: 0.85em;
+    color: #888;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* --- Auth Section --- */
+#auth-section {
+    background: linear-gradient(to left , #969696 , #283046);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+}
+
+.auth-form {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 400px;
+}
+
+.auth-form input[type="text"],
+.auth-form input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
+}
+
+.auth-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.auth-form button:hover {
+    background-color: #0056b3;
+}
+
+/* --- Dashboard Section --- */
+#dashboard-section header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+#dashboard-section header h1 {
+    margin: 0;
+    text-align: left;
+    font-size: 1.8em;
+}
+
+#logout-button {
+    padding: 8px 15px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+#logout-button:hover {
+    background-color: #c82333;
+}
+
+/* Updated: Grid for multiple intern cards */
+#interns-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* At least 300px wide, fills available space */
+    gap: 25px;
+}
+
+.intern-card { /* New class for individual intern cards */
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.intern-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.intern-card p {
+    font-size: 1.05em;
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.intern-card .donation-amount {
+    font-size: 2em;
+    font-weight: bold;
+    color: #28a745; /* Green for money */
+    margin: 15px 0 20px;
+    display: block; /* Ensures it takes its own line */
+    text-align: center;
+}
+
+.intern-card .rewards-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.intern-card .rewards-list li {
+    background-color: #e9f7ef; /* Light green background for rewards */
+    border-left: 4px solid #28a745;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    color: #333;
+}
+
+/* --- Utility Classes --- */
+.hidden {
+    display: none;
+}
+
+.active {
+    display: block; /* Or flex, depending on parent's display */
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    h1 {
+        font-size: 1.8em;
+    }
+    #dashboard-section header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #dashboard-section header h1 {
+        margin-bottom: 15px;
+    }
+    #interns-grid {
+        grid-template-columns: 1fr; /* Stack cards vertically */
+    }
+}

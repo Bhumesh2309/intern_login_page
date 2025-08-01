@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intern Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <section id="auth-section" class="active">
+            <h1>Welcome, Intern!</h1>
+            <div class="auth-form">
+                <h2>Login / Sign Up</h2>
+                <form id="login-form">
+                    <input type="text" placeholder="Username or Email">
+                    <input type="password" placeholder="Password">
+                    <button type="submit">Enter Dashboard</button>
+                </form>
+                <p class="note">No actual authentication is performed. Click "Enter Dashboard" to proceed.</p>
+            </div>
+        </section>
+
+        <section id="dashboard-section" class="hidden">
+            <header>
+                <h1>Interns Overview</h1>
+                <button id="logout-button">Logout</button>
+            </header>
+
+            <div id="interns-grid" class="dashboard-content">
+                <p>Loading intern data...</p>
+            </div>
+
+        </section>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
